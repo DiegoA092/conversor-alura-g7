@@ -1,4 +1,4 @@
-<h1>Conversor de monedas Alura<h1>
+# Conversor de monedas Alura
 ## Un proyecto de Alura y Oracle
 
 Este proyecto fue desarrollado a partir de los requerimientos dados en Java Orientado a Objetos G7 - ONE y en cumplimiento de los requerimientos especificados en el Challenge : Conversor de Monedas.
