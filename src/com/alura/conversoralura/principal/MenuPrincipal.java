@@ -105,6 +105,7 @@ public class MenuPrincipal {
                         }
                         if(contadorDeAlmacenaje == resultadoConversionEne.size()){
                             System.out.println("Almacenaje exitoso!");
+                            contadorDeAlmacenaje = 0;
                         } else {
                             System.out.println("Ocurrio un error!");
                         }
@@ -148,17 +149,19 @@ public class MenuPrincipal {
         boolean divisaCorrecta = false;
         String divisasSeleccionadas;
         String[] listadoDeDivisas = null;
+        teclado.nextLine();
         while (!divisaCorrecta) {
             System.out.println(mensaje);
-            divisasSeleccionadas = teclado.next().toUpperCase().replace(" ", "");
+            divisasSeleccionadas = teclado.nextLine().toUpperCase().replaceAll("\\s+","");
             listadoDeDivisas = divisasSeleccionadas.split(",");
             for (String divisa : listadoDeDivisas) {
-                if (divisasValidas.contains(divisa)) {
+                if (divisasValidas.contains(divisa) && !divisasSeleccionadas.contains(" ")) {
                     divisaCorrecta = true;
                 } else if (divisasSeleccionadas.contains(".")) {
                     System.out.println("Separe divisas con coma (,)");
-                }
-                else {
+                } else if (divisasSeleccionadas.contains(" ")) {
+                    System.out.println("No coloque espacios");
+                } else {
                     System.out.printf("Error! %s no es una divisa valida%n",divisa);
                 }
             }
