@@ -28,8 +28,7 @@ public class BusquedaExchangeRate {
 
         // Accessing object
         JsonObject conversionRates = jsonobj.get("conversion_rates").getAsJsonObject();
-        Gson gson =  new GsonBuilder()
-                .create();
+
 
         return conversionRates.get(divisaResultante).getAsDouble();
     }
@@ -50,8 +49,7 @@ public class BusquedaExchangeRate {
 
         // Accessing object
         JsonObject conversionRates = jsonobj.get("conversion_rates").getAsJsonObject();
-        Gson gson =  new GsonBuilder()
-                .create();
+
 
         this.listaDeConversiones = new ArrayList<>();
 
